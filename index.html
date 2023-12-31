@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,300;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-LCQHqjg5+RZif2NQNPLIOWZb7W35/JKGRBDXuJ/zw7tfE1wxUJDH3oGpY93v0irn+L7omSwubg73R4BQ11S3JQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Project-1</title>
+    <style>
+        /* Add your existing CSS styles here */
+    </style>
+    <script>
+
+        function myFunction() {
+            let userInput = document.querySelector('#userInput');
+            let message = document.querySelector('#message');
+            let thalaGif = document.getElementById('thalaGif');
+            let thalaAudio = document.getElementById('thalaAudio');
+            let noThalaGif = document.getElementById('noThalaGif');
+            let noThalaAudio = document.getElementById('noThalaAudio');
+
+            // Define arrays of GIFs and audio sources for both scenarios
+            const thalaGifs = ['thala1.gif', 'thala2.gif']; // Add more as needed
+            const thalaAudios = ['thala_audio1.mp3', 'thala_audio2.mp3']; // Add more as needed
+
+            const noThalaGifs = ['no_thala1.gif']; // Add more as needed
+            const noThalaAudios = ['no_thala_audio1.mp3', 'no_thala_audio2.mp3']; // Add more as needed
+
+            if (
+                isSumOfDigitsSeven(userInput.value) ||
+                userInput.value.length === 7 ||
+                userInput.value.toLowerCase() === "dhoni"
+            ) {
+                message.innerHTML = "THALA FOR A REASON";
+
+                // Pause No Thala elements
+                noThalaGif.style.display = 'none';
+                noThalaAudio.pause();
+
+                // Randomly select a GIF and audio for THALA
+                const randomIndex = Math.floor(Math.random() * thalaGifs.length);
+                thalaGif.src = thalaGifs[randomIndex];
+                thalaAudio.src = thalaAudios[randomIndex];
+
+                thalaGif.style.display = 'block';
+                thalaAudio.play();
+            } else {
+                message.innerHTML = "NO THALA FOR YOU";
+
+                // Pause Thala elements
+                thalaGif.style.display = 'none';
+                thalaAudio.pause();
+
+                // Randomly select a GIF and audio for no Thala
+                const randomIndex = Math.floor(Math.random() * noThalaGifs.length);
+                noThalaGif.src = noThalaGifs[randomIndex];
+                noThalaAudio.src = noThalaAudios[randomIndex];
+
+                noThalaGif.style.display = 'block';
+                noThalaAudio.play();
+            }
+        }
+
+        function isSumOfDigitsSeven(input) {
+            // Convert input to string to handle both numeric and string input
+            let inputString = input.toString();
+            let sum = 0;
+
+            // Loop through each character in the string
+            for (let i = 0; i < inputString.length; i++) {
+                // Convert the character to a number
+                let digit = parseInt(inputString[i]);
+
+                // Check if the conversion is successful
+                if (!isNaN(digit)) {
+                    // Add the digit to the sum
+                    sum += digit;
+
+                    // Check if the sum equals 7
+                    if (sum === 7) {
+                        return true;
+                    }
+                } else {
+                    // If it's not a number, return false
+                    return false;
+                }
+            }
+
+            // Check if the sum equals 7
+            return sum === 7;
+        }
+        function openDashboard() {
+    window.location.href = "index.html";
+}
+
+    </script>
+</head>
+
+<body><h1 class="head"> 
+    THALA FOR A REASON
+    </h1>
+    <div class="inputBox">
+        
+        <input id="userInput" type="text" required="required" placeholder="">
+        <span> BOLE JO KOYAL </span>
+    </div>
+
+    <h1 id="message"> </h1>
+
+    <div class="button">
+        <button onclick="myFunction()"> click me </button>
+    </div>
+
+    <!-- THALA GIF and Audio Elements -->
+    <img id="thalaGif" style="display: none;" alt="Thala GIF">
+    <audio id="thalaAudio"></audio>
+
+    <!-- NO THALA GIF and Audio Elements -->
+    <div class="video"> 
+         <img id="noThalaGif" style="display: none;" alt="No Thala GIF">
+        </div>
+        <audio id="noThalaAudio"></audio>
+       
+        <h3 class="dashboard" onclick="openDashboard()"> <i class="fas fa-cogs"></i> FAQ </h3>
+ 
+        <footer>
+            <p>Made by Harsha</p>
+            <div class="social-links">
+                <a href="https://twitter.com/your_twitter_handle" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/your_linkedin_profile" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </footer>
+</body>
+</html>
