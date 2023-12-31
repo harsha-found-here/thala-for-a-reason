@@ -1,0 +1,166 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #0D0E25;;
+
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 30px 0;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 1800px;
+    margin-top: 10px;
+
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin:0px 120px;
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color:#fff;
+    bottom: 10px;
+    text-transform: uppercase;
+    margin-top: 100px;
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width:0;
+    position: absolute;
+    background: #009688;
+    left:0;
+    bottom:-10px;
+    transition:0.3s;
+
+}
+.navbar ul li:hover::after{
+    width:100%;
+
+}
+
+
+.navfooter{
+    width: 95%;
+    margin: auto;
+    padding: 35px 0;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.navfooter ul li{
+    list-style: none;
+    display: inline-block;
+    margin:0px 120px;
+    position: relative;
+}
+.navfooter ul li a{
+    text-decoration: none;
+    color:#fff;
+    text-transform: uppercase;
+    
+}
+.navfooter ul li::after{
+    content: '';
+    height: 3px;
+    width:0;
+    position: absolute;
+    background: #009688;
+    left:0;
+    bottom:-10px;
+    transition:0.3s;
+
+}
+.navfooter ul li:hover::after{
+    width:100%;
+
+}
+
+
+
+.shadow{
+    position: relative;
+  
+}
+.shadow:before,
+.shadow:after{
+    content:" ";
+    position:absolute;
+    z-index:-1;
+   
+    top:50%;
+    bottom: 0;
+    left: 10px;
+}
+
+.accordian{
+    margin: 60px auto;
+    width: 600px;
+}
+
+.accordian li{
+   list-style: none;
+   width: 100%;
+   margin: 20px;
+   padding: 10px;
+   border-radius: 8px;
+   background: #e3edf7;
+   box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+   -6px -6px 10px -1px rgba(225,225,225,0.7);
+}
+
+.accordian li label{
+    display:flex;
+    align-items:center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+
+
+}
+
+label::before{
+    content:"+";
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 600;
+
+}
+
+input[type="radio"]{
+    display:none;
+}
+
+.accordian .content{
+    color: #555;
+    padding: 0 10x;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ,padding 0.5s;
+
+
+}
+.accordian input[type="radio"]:checked + label + .content{
+    max-height: 400px;
+    padding: 10px 10px 20px;
+
+}
+.accordian input[type="radio"]:checked + label::before{
+    content:'-'
+}
+

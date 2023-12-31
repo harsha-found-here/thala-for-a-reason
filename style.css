@@ -1,0 +1,163 @@
+*
+{
+    margin: 0;
+    pad:0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+    
+    
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background: #1d2b3a;
+}
+.head {
+   
+    height: 50px;
+    text-align: center; /* Center-align the heading */
+    font-size: 5em; /* Adjust the font size as needed */
+    color: #00dfc4; /* Set the color to your preference */
+    margin-bottom: 600px; /* Add some bottom margin for spacing */
+    padding: 0%;
+}
+
+.inputBox {
+    position: relative;
+    width: 300px;
+    height: 50px;
+    margin-top: -450px;
+    margin-right: 80px;
+    margin-bottom: 20px; /* Add some bottom margin for spacing */
+}
+
+/* Add your existing styles for inputBox and other elements here */
+/* Add your existing styles for inputBox and other elements here */
+.inputBox input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: #1d2b3a;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1.5em;
+   
+    
+}
+.inputBox span
+{
+    position: absolute;
+    left : 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color:rgba(255,255,255,0.25);
+    text-transform: uppercase; 
+    transition: 0.5s;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span
+{
+    color : #00dfc4;
+    transform:translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: #1d2b3a;
+    border-left: 1px solid #00dfc4;
+    border-right: 1px solid #00dfc4;
+    letter-spacing: 0.4em;
+
+}
+.inputBox :nth-child(2) input:valid ~ span,
+.inputBox :nth-child(2) input:focus ~ span
+{
+    background: #00dfc4;
+    color: #1d2b3a;
+    border-radius: 2px;
+
+}
+.inputBox input:valid,
+.inputBox input:focus 
+{
+    color: 1px solid #00dfc4;
+}
+.button {
+    width: 10%; /* Make the button take full width */
+    height: 100%;
+    text-align: center; /* Align the button to the right within the parent container */
+    margin-right: 80px;
+    margin-bottom: 300px;
+}
+
+.button button {
+    margin-left: 0px; /* Adjust the margin to position the button to the left */
+    margin-bottom: 10px;
+    padding: 15px;
+    border: none;
+    background: #00dfc4;
+    color: #1d2b3a;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.button button:hover {
+    background: #1d2b3a;
+    color: white;
+}
+#thalaGif,
+#noThalaGif {
+    margin-top: -200px;
+    max-width: 100%;
+    
+    height: 1auto;
+}
+.dashboard {
+    position: fixed;
+    margin-right: 20px;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 9999;
+    font-size: 5em;
+    font-size: 26px; /* Adjust the font size as needed */
+    color: aliceblue;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+footer p {
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+}
+#message{
+    margin-right: 80px;
+}
+fab fa-twitter{
+    color: skyblue;
+}
